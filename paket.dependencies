@@ -1,6 +1,12 @@
-source https://api.nuget.org/v3/index.json
-framework: net45, netstandard15
+group test
+	source https://api.nuget.org/v3/index.json
+	framework: net45, netstandard15
 
-nuget Microsoft.NET.Test.Sdk >= 15.0.0
-nuget xunit >= 2.2.0
-nuget xunit.runner.visualstudio >= 2.2.0
+	nuget Microsoft.NET.Test.Sdk >= 15.0.0
+	nuget xunit >= 2.2.0
+	nuget xunit.runner.visualstudio >= 2.2.0
+
+group build
+	source https://api.nuget.org/v3/index.json
+	nuget FAKE
+	
