@@ -91,7 +91,7 @@ Benchmarks of checks:
 | Contains by predicate  | x1.1          |
 |*Array*                 |               |
 | IsNotEmpty             | x8.6          |
-| CountIs                | x8.9          |
+| CountIs                | x9         |
 |*Boolean*               |               |
 | IsTrue                 | x5.4          |
 | IsFalse                | x5.4          |
