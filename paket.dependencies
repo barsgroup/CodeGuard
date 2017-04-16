@@ -1,7 +1,14 @@
+group app
+    source https://api.nuget.org/v3/index.json
+	framework: net46, netstandard15
+	
+	nuget Mono.Cecil >= 0.10 prerelease
+
 group test
 	source https://api.nuget.org/v3/index.json
-	framework: net45, netstandard15
+	framework: net46, netstandard15
 
+	nuget Mono.Cecil >= 0.10 prerelease
 	nuget Microsoft.NET.Test.Sdk >= 15.0.0
 	nuget xunit >= 2.2.0
 	nuget xunit.runner.visualstudio >= 2.2.0

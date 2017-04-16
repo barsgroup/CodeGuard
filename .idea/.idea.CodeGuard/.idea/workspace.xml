@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36ef4a2f-9a94-48f6-ad5b-656d94e6dfda" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard.PerfomanceTests/BarsGroup.CodeGuard.PerfomanceTests.xproj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard.PerfomanceTests/BarsGroup.CodeGuard.PerfomanceTests.xproj.user" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard.PerfomanceTests/project.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard.PerfomanceTests/project.lock.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard.Tests/BarsGroup.CodeGuard.Tests.xproj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard.Tests/BarsGroup.CodeGuard.Tests.xproj.user" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard.Tests/project.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard.Tests/project.lock.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard/BarsGroup.CodeGuard.xproj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard/BarsGroup.CodeGuard.xproj.user" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard/project.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard/project.lock.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/global.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeGuard.sln" afterPath="$PROJECT_DIR$/CodeGuard.sln" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BarsGroup.CodeGuard/Fody/WeavingException.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.CodeGuard/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.CodeGuard/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.CodeGuard/riderModule.iml" afterPath="$PROJECT_DIR$/.idea/.idea.CodeGuard/riderModule.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BarsGroup.CodeGuard/BarsGroup.CodeGuard.csproj" afterPath="$PROJECT_DIR$/BarsGroup.CodeGuard/BarsGroup.CodeGuard.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/paket.dependencies" afterPath="$PROJECT_DIR$/paket.dependencies" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/paket.lock" afterPath="$PROJECT_DIR$/paket.lock" />
     </list>
+    <ignored path="$PROJECT_DIR$/BarsGroup.CodeGuard.PerfomanceTests/bin/" />
+    <ignored path="$PROJECT_DIR$/BarsGroup.CodeGuard.PerfomanceTests/obj/" />
+    <ignored path="$PROJECT_DIR$/BarsGroup.CodeGuard.Tests/bin/" />
+    <ignored path="$PROJECT_DIR$/BarsGroup.CodeGuard.Tests/obj/" />
+    <ignored path="$PROJECT_DIR$/BarsGroup.CodeGuard/bin/" />
+    <ignored path="$PROJECT_DIR$/BarsGroup.CodeGuard/obj/" />
+    <ignored path="$PROJECT_DIR$/packages/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +24,155 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="FodyWeavers.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard/FodyWeavers.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModuleWeaver.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard/Fody/ModuleWeaver.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <folding>
+                <marker date="1492354095013" expanded="true" signature="6:162" ph="..." />
+                <marker date="1492354095013" expanded="true" signature="189:5869" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="721:917" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="944:1692" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="1738:2088" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="1892:1997" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="2010:2060" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="2111:2254" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="2145:2185" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="2289:2700" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="2426:2694" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="2527:2684" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="2729:3005" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="2877:2999" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="3065:3798" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="3117:3792" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="3196:3782" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="3267:3431" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="3492:3768" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="3574:3750" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="3852:4628" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="4183:4622" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="4683:5413" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="4858:5407" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="4987:5247" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="5135:5233" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="5312:5397" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="5441:5867" ph="{...}" />
+                <marker date="1492354095013" expanded="true" signature="5598:5728" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeavingException.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard/Fody/WeavingException.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <marker date="1492354683515" expanded="false" signature="6:49" ph="..." />
+                <marker date="1492354683515" expanded="true" signature="92:324" ph="{...}" />
+                <marker date="1492354683515" expanded="true" signature="124:136" ph="{...}" />
+                <marker date="1492354683515" expanded="true" signature="205:217" ph="{...}" />
+                <marker date="1492354683515" expanded="true" signature="310:322" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RepeatAttribute.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard.PerfomanceTests/Attibutes/RepeatAttribute.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+              <folding>
+                <marker date="1491712524905" expanded="true" signature="6:108" ph="..." />
+                <marker date="1491712524905" expanded="true" signature="165:705" ph="{...}" />
+                <marker date="1491712524905" expanded="true" signature="216:703" ph="{...}" />
+                <marker date="1491712524905" expanded="true" signature="302:538" ph="{...}" />
+                <marker date="1491712524905" expanded="true" signature="339:499" ph="{...}" />
+                <marker date="1491712524905" expanded="true" signature="616:697" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Microsoft.NET.Sdk.targets" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/Sdks/Microsoft.NET.Sdk/build/Microsoft.NET.Sdk.targets">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paket.dependencies" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/paket.dependencies">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BarsGroup.CodeGuard.csproj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard/BarsGroup.CodeGuard.csproj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BarsGroup.CodeGuard.PerfomanceTests.csproj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard.PerfomanceTests/BarsGroup.CodeGuard.PerfomanceTests.csproj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paket.references" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard/paket.references">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/BarsGroup.CodeGuard/BarsGroup.CodeGuard.csproj" />
+        <option value="$PROJECT_DIR$/BarsGroup.CodeGuard/paket.references" />
+        <option value="$PROJECT_DIR$/paket.dependencies" />
+        <option value="$PROJECT_DIR$/BarsGroup.CodeGuard/Fody/WeavingException.cs" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -55,6 +202,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <PATH>
@@ -64,6 +212,66 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CodeGuard (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CodeGuard (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BarsGroup.CodeGuard.PerfomanceTests" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CodeGuard (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BarsGroup.CodeGuard" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CodeGuard (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BarsGroup.CodeGuard" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Fody" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CodeGuard (3 projects)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".paket" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -79,6 +287,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CodeGuard.sln" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -105,6 +314,13 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -114,7 +330,16 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -122,6 +347,19 @@
       <scripts />
       <node-interpreter value="project" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
       <method />
     </configuration>
     <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
@@ -151,11 +389,12 @@
       <option name="presentableId" value="Default" />
       <updated>1491637922751</updated>
       <workItem from="1491637926147" duration="658000" />
+      <workItem from="1492352316802" duration="1369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="658000" />
+    <option name="totallyTimeSpent" value="2027000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -168,28 +407,29 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969433" sideWeight="0.50238097" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969433" sideWeight="0.50476193" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969433" sideWeight="0.49761903" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.4952381" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969433" sideWeight="0.4952381" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -214,8 +454,128 @@
       </map>
     </option>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard/FodyWeavers.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard/BarsGroup.CodeGuard.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard.PerfomanceTests/BarsGroup.CodeGuard.PerfomanceTests.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/Sdks/Microsoft.NET.Sdk/build/Microsoft.NET.Sdk.targets">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard/paket.references">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/paket.dependencies">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard/Fody/ModuleWeaver.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <marker date="1492354095013" expanded="true" signature="6:162" ph="..." />
+            <marker date="1492354095013" expanded="true" signature="189:5869" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="721:917" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="944:1692" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="1738:2088" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="1892:1997" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="2010:2060" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="2111:2254" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="2145:2185" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="2289:2700" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="2426:2694" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="2527:2684" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="2729:3005" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="2877:2999" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="3065:3798" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="3117:3792" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="3196:3782" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="3267:3431" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="3492:3768" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="3574:3750" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="3852:4628" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="4183:4622" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="4683:5413" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="4858:5407" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="4987:5247" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="5135:5233" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="5312:5397" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="5441:5867" ph="{...}" />
+            <marker date="1492354095013" expanded="true" signature="5598:5728" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard/Fody/WeavingException.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1492354683515" expanded="false" signature="6:49" ph="..." />
+            <marker date="1492354683515" expanded="true" signature="92:324" ph="{...}" />
+            <marker date="1492354683515" expanded="true" signature="124:136" ph="{...}" />
+            <marker date="1492354683515" expanded="true" signature="205:217" ph="{...}" />
+            <marker date="1492354683515" expanded="true" signature="310:322" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BarsGroup.CodeGuard.PerfomanceTests/Attibutes/RepeatAttribute.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding>
+            <marker date="1491712524905" expanded="true" signature="6:108" ph="..." />
+            <marker date="1491712524905" expanded="true" signature="165:705" ph="{...}" />
+            <marker date="1491712524905" expanded="true" signature="216:703" ph="{...}" />
+            <marker date="1491712524905" expanded="true" signature="302:538" ph="{...}" />
+            <marker date="1491712524905" expanded="true" signature="339:499" ph="{...}" />
+            <marker date="1491712524905" expanded="true" signature="616:697" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

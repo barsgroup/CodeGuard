@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BarsGroup.CodeGuard.Tests\BarsGroup.CodeGuard.Tests.csproj" />
+    <ProjectReference Include="..\BarsGroup.CodeGuard\BarsGroup.CodeGuard.csproj" />
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

@@ -1,4 +1,6 @@
-﻿using BarsGroup.CodeGuard.Internals;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
+using BarsGroup.CodeGuard.Internals;
 
 namespace BarsGroup.CodeGuard.Validators
 {
@@ -8,13 +10,19 @@ namespace BarsGroup.CodeGuard.Validators
         ///     Is argument instance of type
         /// </summary>
         /// <returns></returns>
+        [GuardRedirectAttibute("IsNotNull")]
         public static ArgBase<T?> IsNotNull<T>(this ArgBase<T?> arg) where T : struct
         {
-            var value = arg.Value;
-            if (!value.HasValue)
-                arg.ThrowArgumentNull();
+            throw new InvalidOperationException();
+        }
 
-            return arg;
+        public static void IsNotNullValidate<T>(T? value, string param) where T : struct
+        {
+            if (!value.HasValue)
+            {
+                throw new ArgumentNullException();
+            }
+                //(value, param).ThrowArgumentNull();
         }
     }
 }

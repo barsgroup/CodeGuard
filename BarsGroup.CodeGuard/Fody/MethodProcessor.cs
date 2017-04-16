@@ -1,0 +1,331 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using Mono.Cecil;
+using Mono.Cecil.Cil;
+using Mono.Cecil.Rocks;
+using Mono.Collections.Generic;
+
+public class MethodProcessor
+{
+    private MethodDefinition _guardThatMethod;
+    const string OutParameterIsNull = "[NullGuard] Out parameter '{0}' is null.";
+    const string ReturnValueOfMethodIsNull = "[NullGuard] Return value of method '{0}' is null.";
+    const string IsNull = "[NullGuard] {0} is null.";
+
+    //bool isDebug;
+
+    public MethodProcessor()
+    {
+        //this.isDebug = isDebug;
+    }
+
+    public void Process(MethodDefinition guardThatMethod, MethodDefinition method)
+    {
+        _guardThatMethod = guardThatMethod;
+
+        if (method.IsGeneratedCode())
+        {
+            return;
+        }
+
+        InnerProcess(method);
+    }
+
+    void InnerProcess(MethodDefinition method)
+    {
+        var body = method.Body;
+
+        var sequencePoint = body.Method.DebugInformation.SequencePoints.FirstOrDefault();
+
+        body.SimplifyMacros();
+
+        //if (localValidationFlags.HasFlag(ValidationFlags.Arguments))
+        //{
+        //    InjectMethodArgumentGuards(method, body, sequencePoint);
+        //}
+
+        if (!method.IsAsyncStateMachine() && !method.IsIteratorStateMachine())
+        {
+            InjectMethodGuard(method, body, sequencePoint);
+        }
+
+        //if (method.IsAsyncStateMachine())
+        //{
+        //    var returnType = method.ReturnType;
+        //    var genericReturnType = method.ReturnType as GenericInstanceType;
+        //    if (genericReturnType != null && genericReturnType.HasGenericArguments && genericReturnType.Name.StartsWith("Task"))
+        //    {
+        //        returnType = genericReturnType.GenericArguments[0];
+        //    }
+
+        //    if (localValidationFlags.HasFlag(ValidationFlags.ReturnValues) &&
+        //        !method.AllowsNullReturnValue() &&
+        //        returnType.IsRefType() &&
+        //        returnType.FullName != typeof(void).FullName)
+        //    {
+        //        InjectMethodReturnGuardAsync(body, string.Format(CultureInfo.InvariantCulture, ReturnValueOfMethodIsNull, method.FullName), method.FullName);
+        //    }
+        //}
+
+        body.InitLocals = true;
+        body.OptimizeMacros();
+    }
+
+    //void InjectMethodArgumentGuards(MethodDefinition method, MethodBody body, SequencePoint seqPoint)
+    //{
+    //    var guardInstructions = new List<Instruction>();
+
+    //    foreach (var parameter in method.Parameters.Reverse())
+    //    {
+    //        if (!parameter.MayNotBeNull())
+    //            continue;
+
+    //        if (method.IsSetter && parameter.Equals(method.GetPropertySetterValueParameter()))
+    //            continue;
+
+    //        if (CheckForExistingGuard(body.Instructions, parameter))
+    //            continue;
+
+    //        var entry = body.Instructions.First();
+    //        var errorMessage = string.Format(CultureInfo.InvariantCulture, IsNull, parameter.Name);
+
+    //        guardInstructions.Clear();
+
+    //        if (isDebug)
+    //        {
+    //            InstructionPatterns.LoadArgumentOntoStack(guardInstructions, parameter);
+
+    //            InstructionPatterns.CallDebugAssertInstructions(guardInstructions, errorMessage);
+    //        }
+
+    //        InstructionPatterns.LoadArgumentOntoStack(guardInstructions, parameter);
+
+    //        InstructionPatterns.IfNull(guardInstructions, entry, i =>
+    //        {
+    //            InstructionPatterns.LoadArgumentNullException(i, parameter.Name, errorMessage);
+
+    //            // Throw the top item off the stack
+    //            i.Add(Instruction.Create(OpCodes.Throw));
+    //        });
+
+    //        guardInstructions[0].HideLineFromDebugger(seqPoint);
+
+    //        body.Instructions.Prepend(guardInstructions);
+    //    }
+    //}
+
+    private IEnumerable<Instruction> FindMethodCalls(Instruction i)
+    {
+        var currentInstruction = i;
+        while (currentInstruction != null)
+        {
+            var method = currentInstruction.Operand as MethodReference;
+            if (method != null && method.Parameters.Any() && 
+                method.Parameters[0].ParameterType.Name == _guardThatMethod.ReturnType.Name)
+            {
+                yield return currentInstruction;
+            }
+
+            currentInstruction = currentInstruction.Next;
+        }
+    }
+
+    private void InjectMethodGuard(MethodDefinition method, MethodBody body, SequencePoint seqPoint)
+    {
+        var guardInstructions = new List<Instruction>();
+
+        var methodCalls = body.Instructions
+            .Where(i => i.Operand is MethodReference && ((MethodReference)i.Operand).Name == _guardThatMethod.Name)
+            .ToList();
+
+        foreach (var instruction in methodCalls)
+        {
+            var secondParam = instruction.Previous;
+            var firstParam = secondParam.Previous;
+
+            var callMethods = FindMethodCalls(instruction);
+
+        }
+        //foreach (var ret in returnPoints)
+        //{
+        //    if (localValidationFlags.HasFlag(ValidationFlags.ReturnValues) &&
+        //        !method.AllowsNullReturnValue() &&
+        //        method.ReturnType.IsRefType() &&
+        //        method.ReturnType.FullName != typeof(void).FullName &&
+        //        !method.IsGetter)
+        //    {
+        //        var errorMessage = string.Format(CultureInfo.InvariantCulture, ReturnValueOfMethodIsNull, method.FullName);
+        //        AddReturnNullGuard(body, seqPoint, ret, method.ReturnType, errorMessage, Instruction.Create(OpCodes.Throw));
+        //    }
+
+        //    if (localValidationFlags.HasFlag(ValidationFlags.Arguments))
+        //    {
+        //        foreach (var parameter in method.Parameters.Reverse())
+        //        {
+        //            // This is no longer the return instruction location, but it is where we want to jump to.
+        //            var returnInstruction = body.Instructions[ret];
+
+        //            if (localValidationFlags.HasFlag(ValidationFlags.OutValues) &&
+        //                parameter.IsOut &&
+        //                parameter.ParameterType.IsRefType() &&
+        //                !parameter.AllowsNull())
+        //            {
+        //                var errorMessage = string.Format(CultureInfo.InvariantCulture, OutParameterIsNull, parameter.Name);
+
+        //                guardInstructions.Clear();
+
+        //                if (isDebug)
+        //                {
+        //                    InstructionPatterns.LoadArgumentOntoStack(guardInstructions, parameter);
+
+        //                    InstructionPatterns.CallDebugAssertInstructions(guardInstructions, errorMessage);
+        //                }
+
+        //                InstructionPatterns.LoadArgumentOntoStack(guardInstructions, parameter);
+
+        //                InstructionPatterns.IfNull(guardInstructions, returnInstruction, i =>
+        //                {
+        //                    InstructionPatterns.LoadInvalidOperationException(i, errorMessage);
+
+        //                    // Throw the top item off the stack
+        //                    i.Add(Instruction.Create(OpCodes.Throw));
+        //                });
+
+        //                guardInstructions[0].HideLineFromDebugger(seqPoint);
+
+        //                body.InsertAtMethodReturnPoint(ret, guardInstructions);
+        //            }
+        //        }
+        //    }
+        //}
+    }
+
+   
+
+    //void InjectMethodReturnGuardAsync(MethodBody body, string errorMessage, string methodName)
+    //{
+    //    foreach (var local in body.Variables)
+    //    {
+    //        var resolve = local.VariableType.Resolve();
+    //        if (!resolve.IsGeneratedCode() ||
+    //            !resolve.IsIAsyncStateMachine())
+    //        {
+    //            continue;
+    //        }
+
+    //        var moveNext = resolve.Methods.First(x => x.Name == "MoveNext");
+
+    //        InjectMethodReturnGuardAsyncIntoMoveNext(moveNext, errorMessage, methodName);
+    //    }
+    //}
+
+    //void InjectMethodReturnGuardAsyncIntoMoveNext(MethodDefinition method, string errorMessage, string methodName)
+    //{
+    //    method.Body.SimplifyMacros();
+
+    //    var setExceptionInstruction = method.Body.Instructions
+    //        .FirstOrDefault(x => x.OpCode == OpCodes.Call && IsSetExceptionMethod(x.Operand as MethodReference));
+
+    //    if (setExceptionInstruction == null)
+    //    {
+    //        // Mono's broken compiler doen't add a SetException call if there's no await.
+    //        // Bail out since we're not about to rewrite the whole method to fix this. :/
+    //        LogTo.Warning("Cannot add guards to {0} as the method contains no await keyword.", methodName);
+    //        return;
+    //    }
+
+    //    var setExceptionMethod = (MethodReference)setExceptionInstruction.Operand;
+
+    //    var returnPoints = method.Body.Instructions
+    //            .Select((o, ix) => new { o, ix })
+    //            .Where(a => a.o.OpCode == OpCodes.Call && IsSetResultMethod(a.o.Operand as MethodReference))
+    //            .Select(a => a.ix)
+    //            .OrderByDescending(ix => ix);
+
+    //    foreach (var ret in returnPoints)
+    //    {
+    //        AddReturnNullGuard(method.Body, null, ret, method.ReturnType, errorMessage, Instruction.Create(OpCodes.Call, setExceptionMethod), Instruction.Create(OpCodes.Ret));
+    //    }
+
+    //    method.Body.OptimizeMacros();
+    //}
+
+    //void AddReturnNullGuard(MethodBody methodBody, SequencePoint seqPoint, int ret, TypeReference returnType, string errorMessage, params Instruction[] finalInstructions)
+    //{
+    //    var returnInstruction = methodBody.Instructions[ret];
+
+    //    var guardInstructions = new List<Instruction>();
+
+    //    if (isDebug)
+    //    {
+    //        InstructionPatterns.DuplicateReturnValue(guardInstructions, returnType);
+
+    //        InstructionPatterns.CallDebugAssertInstructions(guardInstructions, errorMessage);
+    //    }
+
+    //    InstructionPatterns.DuplicateReturnValue(guardInstructions, returnType);
+
+    //    InstructionPatterns.IfNull(guardInstructions, returnInstruction, i =>
+    //    {
+    //        // Clean up the stack (important if finalInstructions doesn't throw, e.g. for async methods):
+    //        i.Add(Instruction.Create(OpCodes.Pop));
+
+    //        InstructionPatterns.LoadInvalidOperationException(i, errorMessage);
+
+    //        i.AddRange(finalInstructions);
+    //    });
+
+    //    guardInstructions[0].HideLineFromDebugger(seqPoint);
+
+    //    methodBody.InsertAtMethodReturnPoint(ret, guardInstructions);
+    //}
+
+    //static bool CheckForExistingGuard(Collection<Instruction> instructions, ParameterDefinition parameter)
+    //{
+    //    for (var i = 1; i < instructions.Count - 1; i++)
+    //    {
+    //        if (instructions[i].OpCode == OpCodes.Newobj)
+    //        {
+    //            var newObjectMethodRef = instructions[i].Operand as MethodReference;
+
+    //            if (newObjectMethodRef == null || instructions[i + 1].OpCode != OpCodes.Throw)
+    //                continue;
+
+    //            // Checks for throw new ArgumentNullException("x");
+    //            if (newObjectMethodRef.FullName == ReferenceFinder.ArgumentNullExceptionConstructor.FullName &&
+    //                instructions[i - 1].OpCode == OpCodes.Ldstr &&
+    //                (string)(instructions[i - 1].Operand) == parameter.Name)
+    //                return true;
+
+    //            // Checks for throw new ArgumentNullException("x", "some message");
+    //            if (newObjectMethodRef.FullName == ReferenceFinder.ArgumentNullExceptionWithMessageConstructor.FullName &&
+    //                i > 1 &&
+    //                instructions[i - 2].OpCode == OpCodes.Ldstr &&
+    //                (string)(instructions[i - 2].Operand) == parameter.Name)
+    //                return true;
+    //        }
+    //    }
+
+    //    return false;
+    //}
+
+    //static bool IsSetResultMethod(MethodReference methodReference)
+    //{
+    //    return
+    //        methodReference != null &&
+    //        methodReference.Name == "SetResult" &&
+    //        methodReference.Parameters.Count == 1 &&
+    //        methodReference.DeclaringType.FullName.StartsWith("System.Runtime.CompilerServices.AsyncTaskMethodBuilder");
+    //}
+
+    //static bool IsSetExceptionMethod(MethodReference methodReference)
+    //{
+    //    return
+    //        methodReference != null &&
+    //        methodReference.Name == "SetException" &&
+    //        methodReference.Parameters.Count == 1 &&
+    //        methodReference.DeclaringType.FullName.StartsWith("System.Runtime.CompilerServices.AsyncTaskMethodBuilder");
+    //}
+}

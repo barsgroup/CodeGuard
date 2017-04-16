@@ -1,4 +1,5 @@
 group test
+	Mono.Cecil
 	Microsoft.NET.Test.Sdk
 	xunit.runner.visualstudio
 	xunit
