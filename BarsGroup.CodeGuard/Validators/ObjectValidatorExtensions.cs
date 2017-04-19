@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using BarsGroup.CodeGuard.Internals;
 
-namespace BarsGroup.CodeGuard.Validators
+namespace BarsGroup.CodeGuard
 {
     public static class ObjectValidatorExtensions
     {

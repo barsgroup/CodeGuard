@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using BarsGroup.CodeGuard.Exceptions;
-using BarsGroup.CodeGuard.Internals;
-using BarsGroup.CodeGuard.Validators;
 using Xunit;
 
 namespace BarsGroup.CodeGuard.Tests.Validators
