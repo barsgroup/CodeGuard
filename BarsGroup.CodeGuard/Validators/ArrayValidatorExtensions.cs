@@ -1,7 +1,7 @@
 using BarsGroup.CodeGuard.Exceptions;
 using BarsGroup.CodeGuard.Internals;
 
-namespace BarsGroup.CodeGuard.Validators
+namespace BarsGroup.CodeGuard
 {
     public static class ArrayValidatorExtensions
     {

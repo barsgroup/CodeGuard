@@ -2,7 +2,7 @@ using System;
 using BarsGroup.CodeGuard.Internals;
 using ArgumentNullException = BarsGroup.CodeGuard.Exceptions.ArgumentNullException;
 
-namespace BarsGroup.CodeGuard.Validators
+namespace BarsGroup.CodeGuard
 {
     public static class ComparableValidatorExtensions
     {

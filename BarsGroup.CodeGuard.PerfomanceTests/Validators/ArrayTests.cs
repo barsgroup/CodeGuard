@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using BarsGroup.CodeGuard.PerfomanceTests.Attibutes;
-using BarsGroup.CodeGuard.Validators;
 using Xunit;
 
 namespace BarsGroup.CodeGuard.PerfomanceTests.Validators
