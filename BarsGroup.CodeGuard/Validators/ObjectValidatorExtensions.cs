@@ -17,7 +17,7 @@ namespace BarsGroup.CodeGuard
             return arg;
         }
 
-        public static ArgBase<T> IsEqualTo<T>(this ArgBase<T> arg, object obj) where T : class
+        public static ArgBase<T> IsEqualTo<T>(this ArgBase<T> arg, object obj)
         {
             if (!arg.Value.Equals(obj))
                 throw new NotExpectedException<object>(arg.Value, obj, arg.Name);
