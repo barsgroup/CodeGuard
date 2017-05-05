@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using BarsGroup.CodeGuard.Exceptions;
 using BarsGroup.CodeGuard.Internals;
 
 namespace BarsGroup.CodeGuard
@@ -12,6 +13,14 @@ namespace BarsGroup.CodeGuard
         {
             if (arg.Value == null)
                 arg.ThrowArgumentNull();
+
+            return arg;
+        }
+
+        public static ArgBase<T> IsEqualTo<T>(this ArgBase<T> arg, object obj) where T : class
+        {
+            if (!arg.Value.Equals(obj))
+                throw new NotExpectedException<object>(arg.Value, obj, arg.Name);
 
             return arg;
         }
@@ -70,6 +79,7 @@ namespace BarsGroup.CodeGuard
             return arg;
         }
 
+       
         public static ArgBase<T> IsOneOf<T>(this ArgBase<T> arg, IReadOnlyList<T> collection)
         {
             if (!collection.Contains(arg.Value))

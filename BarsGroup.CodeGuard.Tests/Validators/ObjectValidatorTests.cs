@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using BarsGroup.CodeGuard.Exceptions;
 using Xunit;
+using Xunit.Sdk;
 
 namespace BarsGroup.CodeGuard.Tests.Validators
 {
@@ -191,6 +192,26 @@ namespace BarsGroup.CodeGuard.Tests.Validators
 
             // Act/Assert
             Assert.Throws<ArgumentNullException>(() => Guard.That(arg).IsNotNull());
+        }
+
+        [Fact]
+        public void IsEqualTo_Equal_NotThrows()
+        {
+            // Arrange
+            var arg = new TestClass();
+
+            // Act/Assert
+            Guard.That(arg).IsEqualTo(arg);
+        }
+
+        [Fact]
+        public void IsEqualTo_NotEqual_Throws()
+        {
+            // Arrange
+            var arg = new TestClass();
+
+            // Act/Assert
+            Assert.Throws<NotExpectedException<object>>(() => Guard.That(arg).IsEqualTo(new TestClass()));
         }
 
         [Fact]
