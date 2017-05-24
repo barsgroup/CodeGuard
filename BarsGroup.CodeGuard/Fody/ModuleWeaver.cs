@@ -15,7 +15,9 @@ public class ModuleWeaver
 
     public ModuleWeaver()
     {
-        var guardType = ModuleDefinition.ReadModule("BarsGroup.CodeGuard.dll").GetType("BarsGroup.CodeGuard", "Guard");
+        var guardModule = ModuleDefinition.ReadModule("BarsGroup.CodeGuard.dll");
+        var guardType = guardModule.GetType("BarsGroup.CodeGuard", "Guard");
+        var 
         _guardThatMethod = guardType.Methods.Single(m => m.Name == "That");
     }
 
